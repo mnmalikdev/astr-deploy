@@ -10,7 +10,7 @@ import SideMenu from "./sideMenu";
 
 const TabMenu: React.FC<IMenuProps> = ({ active }) => {
   return (
-    <nav className="fixed bottom-0 w-full flex items-center justify-between border-2 bg-white text-black">
+    <nav className="fixed px-6 bottom-0 w-full flex items-center justify-between border-2 bg-white text-black">
       <ul className="flex-0 mr-5">
         <li className="p-4">
           <Link href="/">

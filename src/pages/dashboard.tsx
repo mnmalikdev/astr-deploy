@@ -18,7 +18,7 @@ const Dashboard = () => {
     dots: false,
     infinite: true,
     speed: 3000,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -114,7 +114,12 @@ const Dashboard = () => {
             <Image src={logo} alt="astr-logo" />
           </div>
           <div className="text-center">
-            <p className="text-xl  md:text-4xl font-semibold">{time}</p>
+            <p
+              className="text-xl  md:text-4xl font-semibold"
+              suppressHydrationWarning
+            >
+              {time}
+            </p>
             <div className="text-sm text-gray-600 mt-1">{formattedDate}</div>
           </div>
           <div className="flex items-center justify-end">
@@ -201,12 +206,14 @@ const Dashboard = () => {
             <div className="hidden sm:block h-6 w-6 bg-[#EFCA08] rounded-md"></div>
             <div className="font-bold  md:px-2">MY AFFIRMATIONS</div>
           </div>
-          <div className="bg-gray-100 h:24 lg:h-96 p-4">
+          <div className="bg-gray-100 h:24 lg:h-90 p-4">
             <Slider {...settings}>
               {data.map((val, key) => (
                 <div key={key}>
-                  <div className="flex justify-end relative xl:bg-white h-68 mx-1 rounded-3xl">
-                    <button className="text-2xl absolute right-3 w-4 text-yellow-600">x</button>
+                  <div className="flex justify-end relative">
+                    <button className="text-2xl absolute right-3 w-4 text-yellow-600">
+                      x
+                    </button>
                     <Card
                       type="slide"
                       source={val.source}

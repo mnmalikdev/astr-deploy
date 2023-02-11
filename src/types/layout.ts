@@ -3,7 +3,8 @@ import React from "react";
 export interface IClientProps {
     children: React.ReactNode;
     space:string,
-    spaceDetail:string
+    spaceDetail:string,
+    bgColor:string
 }
 
 export interface IAuthProps {

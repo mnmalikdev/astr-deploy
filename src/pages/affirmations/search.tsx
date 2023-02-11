@@ -2,11 +2,11 @@ import React from "react";
 import Head from "next/head";
 import data from "@/data/home.json";
 import ClientLayout from "@/layouts/clientLayout";
+import { BsThreeDotsVertical, BsThreeDots } from "react-icons/bs";
 import Card from "@/components/card";
 
 const Search = () => {
-
-    const [searchTerm, setSearchTerm] = React.useState<string>("");
+  const [searchTerm, setSearchTerm] = React.useState<string>("");
 
   return (
     <>
@@ -16,54 +16,76 @@ const Search = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ClientLayout space={space.space} spaceDetail={space.spaceDetail}>
-        <div className="text-2xl ml-auto">
-            <label htmlFor="simple-search" className="sr-only">
-              Search
-            </label>
-            <div className="relative w-full">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <svg
-                  aria-hidden="true"
-                  className="w-5 h-5 text-gray-500 dark:text-gray-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </div>
-              <input
-                type="text"
-                className="bg-gray-50 border border-black border-4 text-gray-900 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="What key words you are searching for?"
-                onChange={(event)=>{
-                    setSearchTerm(event.target.value)
-                }}
-              />
+      <ClientLayout
+        space={space.space}
+        spaceDetail={space.spaceDetail}
+        bgColor={"#FFFFFF"}
+      >
+        <div className="text-2xl ml-auto mb-8">
+          <label htmlFor="simple-search" className="sr-only">
+            Search
+          </label>
+          <div className="relative w-full">
+            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <svg
+                aria-hidden="true"
+                className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
             </div>
+            <input
+              type="text"
+              className="bg-gray-50 border border-black border-4 text-gray-900 text-sm rounded-2xl focus:ring-blue-500  block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="What key words you are searching for?"
+              onChange={(event) => {
+                setSearchTerm(event.target.value);
+              }}
+            />
+          </div>
         </div>
         <div className="flex justify-center flex-wrap">
-          {data.filter((val)=>{
-            if(searchTerm == "") {
+          {data
+            .filter((val) => {
+              if (searchTerm == "") {
                 return val;
-            } else if(val.source.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) || val.message.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) ) {
+              } else if (
+                val.source
+                  .toLocaleLowerCase()
+                  .includes(searchTerm.toLocaleLowerCase()) ||
+                val.message
+                  .toLocaleLowerCase()
+                  .includes(searchTerm.toLocaleLowerCase())
+              ) {
                 return val;
-            }
-          }).map((value, key) => (
-            <div className="m-2 mt-12" key={key}>
-              <Card
-                source={value.source}
-                message={value.message}
-                isLiked={value.liked}
-                type="small"
-              />
-            </div>
-          ))}
+              }
+            })
+            .map((value, key) => (
+              <div className="md:mx-6 lg:mx-2 my-2 mt-12 relative" key={key}>
+                <button className="hidden md:block text-2xl absolute right-3 top-5 w-4 text-[#FFD233]">
+                  <BsThreeDotsVertical size={20} />
+                </button>
+                <Card
+                  source={value.source}
+                  message={value.message}
+                  isLiked={value.liked}
+                  type="small"
+                />
+                <button
+                  className="block md:hidden text-2xl absolute right-6 top-56 md:top-80 w-4 text-[#FFD233]"
+                  style={{ marginTop: 8 }}
+                >
+                  <BsThreeDots size={20} />
+                </button>
+              </div>
+            ))}
         </div>
       </ClientLayout>
     </>

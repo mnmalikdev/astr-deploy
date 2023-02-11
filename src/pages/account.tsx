@@ -5,7 +5,7 @@ import { BiHelpCircle } from "react-icons/bi";
 import { MdOutlineFeedback } from "react-icons/md";
 import Badge from "@/components/badge";
 import Link from "next/link";
-import user from '@/data/user.json'
+import user from "@/data/user.json";
 
 const Account = () => {
   return (
@@ -17,14 +17,18 @@ const Account = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex h-screen">
-        
-        <ClientLayout space={space.space} spaceDetail={space.spaceDetail}>
+        <ClientLayout
+          space={space.space}
+          spaceDetail={space.spaceDetail}
+          bgColor={"#F2F2F2"}
+        >
           <div className="text-2xl ml-auto lg:ml-20">
-            Here's your account, <span className="text-gray-600">John</span>
+            Here&apos;s your account,{" "}
+            <span className="text-gray-600">John</span>
           </div>
           <div className="px-0 py-10 md:px-24 lg:px-36 xl:px-60 2xl:px-96">
             <div className="mt-8">
-              <div className="max-w-sm h-80 overflow-hidden shadow-lg bg-gradient-to-r from-rose-100 to-teal-100 rounded-3xl">
+              <div className="max-w-sm h-80 overflow-hidden shadow-lg bg-white rounded-3xl">
                 <div className="h-80">
                   <div className="px-3 py-3 h-full w-full flex items-center justify-center">
                     <div className="text-black text-center font-semibold">
@@ -39,21 +43,25 @@ const Account = () => {
                         <input
                           type="text"
                           value={user.firstName}
-                          onChange={()=>alert("Please handle the onChange event.")}
-                          className="w-32 h-8 rounded-md p-1"
+                          onChange={() =>
+                            alert("Please handle the onChange event.")
+                          }
+                          className="w-32 h-8 border border-black rounded-md p-1"
                         />
                         <input
                           type="text"
                           value={user.lastName}
-                          onChange={()=>alert("Please handle the onChange event.")}
-                          className="w-32 h-8 rounded-md p-1"
+                          onChange={() =>
+                            alert("Please handle the onChange event.")
+                          }
+                          className="w-32 h-8 border border-black rounded-md p-1"
                         />
                       </div>
                       <div className="mt-8">
                         <p className="text-base font-bold">Role(s)</p>
                         <p className="text-sm mt-1">• User</p>
                       </div>
-                      <button className="mt-4 text-white bg-[#0AD3FF] p-2 w-32 rounded-md">
+                      <button className="mt-4 text-white bg-[#2CB673] p-2 w-32 rounded-md">
                         Update Profile
                       </button>
                     </div>
@@ -63,7 +71,7 @@ const Account = () => {
 
               <div className="mt-12">
                 <p className="text-md font-bold">STATS</p>
-                <div className="max-w-sm mt-2 overflow-hidden shadow-lg bg-gradient-to-r from-rose-100 to-teal-100 rounded-3xl">
+                <div className="max-w-sm mt-2 overflow-hidden shadow-lg bg-white rounded-3xl">
                   <div className="h-20 mb-2">
                     <div className="grid grid-cols-2 gap-1 justify-evenly">
                       <div className="w-26 h-12">
@@ -101,7 +109,9 @@ const Account = () => {
                 </div>
               </div>
               <div className="mt-16 flex items-center justify-center">
-                <Link href="/" className="text-[#2CB673]">Sign Out</Link>
+                <Link href="/" className="text-[#2CB673]">
+                  Sign Out
+                </Link>
               </div>
             </div>
           </div>

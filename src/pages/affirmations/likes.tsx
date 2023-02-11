@@ -1,11 +1,11 @@
 import React from "react";
 import Head from "next/head";
 import data from "@/data/home.json";
+import { BsThreeDotsVertical, BsThreeDots } from "react-icons/bs";
 import ClientLayout from "@/layouts/clientLayout";
 import Card from "@/components/card";
 
-
-const Likes : React.FC = () => {
+const Likes: React.FC = () => {
   return (
     <>
       <Head>
@@ -14,20 +14,36 @@ const Likes : React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ClientLayout space={space.space} spaceDetail={space.spaceDetail}>
-          <div className="text-2xl ml-auto">
-            Your likes, <span className="text-gray-600">John</span>
-          </div>
-          <div className="flex justify-center flex-wrap">
-            {data.map((value, key) => (
-                value.liked ?
-              <div className="m-2 mt-12" key={key}>
-                <Card source={value.source} message={value.message} isLiked={value.liked} type='small' />
-              </div> :
-              <></>
-            ))}
-          </div>
-        </ClientLayout> 
+      <ClientLayout
+        space={space.space}
+        spaceDetail={space.spaceDetail}
+        bgColor={"#FFFFFF"}
+      >
+        <div className="text-2xl px-8">
+          Your likes, <span className="text-gray-600">John</span>
+        </div>
+        <div className="flex justify-center flex-wrap">
+          {data.map((value, key) => (
+            <div className="md:mx-6 lg:mx-2 my-2 mt-12 relative" key={key}>
+              <button className="hidden md:block text-2xl absolute right-3 top-5 w-4 text-[#FFD233]">
+                <BsThreeDotsVertical size={20} />
+              </button>
+              <Card
+                source={value.source}
+                message={value.message}
+                isLiked={value.liked}
+                type="small"
+              />
+              <button
+                className="block md:hidden text-2xl absolute right-6 top-56 md:top-80 w-4 text-[#FFD233]"
+                style={{ marginTop: 8 }}
+              >
+                <BsThreeDots size={20} />
+              </button>
+            </div>
+          ))}
+        </div>
+      </ClientLayout>
     </>
   );
 };
