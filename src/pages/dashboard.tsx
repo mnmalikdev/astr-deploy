@@ -18,7 +18,7 @@ const Dashboard = () => {
     dots: false,
     infinite: true,
     speed: 3000,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -48,7 +48,7 @@ const Dashboard = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           arrows: false,
           slidesToScroll: 1,
         },
@@ -206,7 +206,7 @@ const Dashboard = () => {
             <div className="hidden sm:block h-6 w-6 bg-[#EFCA08] rounded-md"></div>
             <div className="font-bold  md:px-2">MY AFFIRMATIONS</div>
           </div>
-          <div className="bg-gray-100 h:24 lg:h-90 p-4">
+          <div className="bg-gray-100 h:24 lg:h-90 p-3">
             <Slider {...settings}>
               {data.map((val, key) => (
                 <div key={key}>
