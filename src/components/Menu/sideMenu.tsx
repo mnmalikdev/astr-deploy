@@ -6,55 +6,75 @@ import { FaHome, FaHeart, FaRandom, FaSearch } from "react-icons/fa";
 import user from "@/data/user.json";
 import { IMenuProps } from "@/types/Menu";
 import { BiMessageAdd } from "react-icons/bi";
+import Tooltip from "../tooltip";
 
 const SideMenu: React.FC<IMenuProps> = ({ active }) => {
   return (
     <nav className="hidden lg:block lg:flex flex-col lg:fixed lg:items-center border-2 h-screen bg-white text-black">
       <ul className="flex-1 mt-5">
-        <Link href="/dashboard">
-          <Image src={logo} alt="logo" />
+        <Link href="/">
+          <Image src={logo} alt="logo" width={50}  />
         </Link>
       </ul>
       <ul className="flex-0">
         <li className="p-4">
           <Link href="/">
-            <FaHome color={active === "/" ? "black" : "gray"} />
+            <div className="group flex relative">
+              <FaHome color={active === "/" ? "black" : "gray"} size={20} />
+              <Tooltip content="Home" />
+            </div>
           </Link>
         </li>
       </ul>
       <ul className="flex-0">
         <li className="p-4">
           <Link href="/affirmations/likes">
-            <FaHeart
-              color={active === "/affirmations/likes" ? "black" : "gray"}
-            />
+            <div className="group flex relative">
+              <FaHeart
+                color={active === "/affirmations/likes" ? "black" : "gray"}
+                size={20}
+              />
+              <Tooltip content="Likes" />
+            </div>
           </Link>
         </li>
       </ul>
       <ul className="flex-0">
         <li className="p-4">
           <Link href="/affirmations/random">
-            <FaRandom
-              color={active === "/affirmations/random" ? "black" : "gray"}
-            />
+            <div className="group flex relative">
+              <FaRandom
+                color={active === "/affirmations/random" ? "black" : "gray"}
+                size={20}
+              />
+              <Tooltip content="Random" />
+            </div>
           </Link>
         </li>
       </ul>
       <ul className="flex-0">
         <li className="p-4">
           <Link href="/affirmations/search">
-            <FaSearch
-              color={active === "/affirmations/search" ? "black" : "gray"}
-            />
+            <div className="group flex relative">
+              <FaSearch
+                color={active === "/affirmations/search" ? "black" : "gray"}
+                size={20}
+              />
+              <Tooltip content="Search" />
+            </div>
           </Link>
         </li>
       </ul>
       <ul className="flex-1">
         <li className="p-4">
-          <Link href="affirmations/addnew">
-            <BiMessageAdd
-              color={active === "/affirmations/addnew" ? "black" : "gray"}
-            />
+          <Link href="/affirmations/addnew">
+            <div className="group flex relative">
+              <BiMessageAdd
+                color={active === "/affirmations/addnew" ? "black" : "gray"}
+                size={20}
+              />
+              <Tooltip content="New" />
+            </div>
           </Link>
         </li>
       </ul>
@@ -66,7 +86,7 @@ const SideMenu: React.FC<IMenuProps> = ({ active }) => {
                 active === "/account"
                   ? "text-black font-semibold"
                   : "text-white"
-              } bg-gradient-to-r from-[#2CB673] to-[#0AD3FF] px-2 py-1.5 rounded-3xl`}
+              } bg-gradient-to-r from-[#2CB673] to-[#0AD3FF] p-2 rounded-full`}
             >
               {user.initials}
             </span>

@@ -10,3 +10,7 @@ export interface IClientProps {
 export interface IAuthProps {
     children: React.ReactNode;
 }
+
+export interface IAddNewProps {
+    children: React.ReactNode
+}
