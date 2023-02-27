@@ -58,7 +58,7 @@ const AddNewModal = () => {
                         <p className="text-large pt-2 pb-1 font-bold">Public</p>
                         <li className="text-xs pl-1 italic text-gray-600">
                           Will be visibile to everyone on the platform
-                        </li>
+                        </li> 
                       </div>
                     </div>
                     <div className="border-b border-solid border-slate-200 mb-4">
