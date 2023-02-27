@@ -1,6 +1,8 @@
 import Head from "next/head";
 import ClientLayout from "@/layouts/clientLayout";
 import feedbackImg from '@/assets/imgs/feedback.svg'
+import supportImg from '@/assets/imgs/support.svg'
+import helpImg from '@/assets/imgs/Group.svg'
 import Badge from "@/components/badge";
 import Link from "next/link";
 import user from "@/data/user.json";
@@ -27,16 +29,16 @@ const Account = () => {
           </div>
           <div className="flex items-center justify-center px-0 py-10 md:px-24 lg:px-36 xl:px-60 2xl:px-96">
             <div className="mt-8">
-              <div className="max-w-sm h-80 overflow-hidden shadow-lg bg-white" style={{borderRadius:'32px'}}>
+              <div className="max-w-sm py-3 h-80 overflow-hidden shadow-lg bg-white" style={{borderRadius:'32px'}}>
                 <div className="h-80">
-                  <div className="px-3 py-3 h-full w-full flex items-center justify-center">
+                  <div className="h-full w-full flex items-center justify-center">
                     <div className="text-black text-center font-semibold">
-                      <span className="bg-gradient-to-r from-[#2CB673] to-[#0AD3FF] px-4 py-3 rounded-full text-2xl text-white">
+                      <span className="bg-gradient-to-r from-[#2CB673] to-[#0AD3FF] px-5 py-5 rounded-full text-3xl text-white">
                         {user.initials}
                       </span>
                       <div className="mt-10 flex gap-16">
-                        <label className="text-sm">First Name</label>
-                        <label className="text-sm">Last Name</label>
+                        <label className="text-sm text-[#3D4849]">First name</label>
+                        <label className="text-sm text-[#3D4849]">Last name</label>
                       </div>
                       <div className="mt-2 flex gap-2">
                         <input
@@ -45,7 +47,7 @@ const Account = () => {
                           onChange={() =>
                             alert("Please handle the onChange event.")
                           }
-                          className="w-32 h-8 border border-black rounded-md p-1"
+                          className="w-32 h-8 text-[#3D4849] text-sm border border-[#3D4849] rounded-md p-1"
                         />
                         <input
                           type="text"
@@ -53,13 +55,13 @@ const Account = () => {
                           onChange={() =>
                             alert("Please handle the onChange event.")
                           }
-                          className="w-32 h-8 border border-black rounded-md p-1"
+                          className="w-32 h-8 text-sm text-[#3D4849] border border-[#3D4849] rounded-md p-1"
                         />
                       </div>
                       <div className="mt-8 flex">
-                        <p className="text-base font-semibold">Role(s)</p>
+                        <p className="text-base font-semibold text-[#3D4849]">Role(s)</p>
                       </div>
-                      <p className="flex text-sm text-gray-800 mx-3 mt-1">• User</p>
+                      <p className="flex text-sm text-[#3D4849] mx-3 mt-1">• User</p>
                       <button className="mt-4 text-white bg-[#2CB673] p-2 w-32 rounded-md">
                         Update Profile
                       </button>
@@ -96,7 +98,7 @@ const Account = () => {
 
               <div className="mt-12">
                 <p className="text-md font-bold text-[#3D4849]">SUPPORT US</p>
-                <Badge icon={feedbackImg} value="Share a Space to remember" />
+                <Badge icon={supportImg} value="Share a Space to remember" />
               </div>
               <div className="mt-12">
                 <p className="text-md font-bold text-[#3D4849]">HELP</p>
@@ -104,7 +106,7 @@ const Account = () => {
                   <Badge icon={feedbackImg} value="Give us Feedback" />
                 </div>
                 <div className="mb-4">
-                  <Badge icon={feedbackImg} value="Help" />
+                  <Badge icon={helpImg} value="Help" />
                 </div>
               </div>
               <div className="mt-16 flex items-center justify-center">
