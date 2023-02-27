@@ -2,10 +2,14 @@ import AddNewLayout from "@/layouts/addNewLayout";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
+import publicImg from "@/assets/imgs/public.svg";
+import userSelection from "@/assets/imgs/userSelection.svg"
 import { useRouter } from "next/router";
 import user from "@/data/user.json";
 import { RxCross2, RxTriangleDown } from "react-icons/rx";
 import { FaRegWindowMinimize } from "react-icons/fa";
+import {AiFillCheckCircle} from 'react-icons/ai'
 
 const AddNewModal = () => {
   const [showModal, setShowModal] = React.useState(false);
@@ -37,11 +41,25 @@ const AddNewModal = () => {
                     <div className="text-lg mb-4 text-center mx-16 lg:mx-0 font-bold">
                       Affirmation Visability
                     </div>
-                    <div className="my-2 border-t-2 border-b border-solid border-slate-200">
-                      <p className="text-large pt-2 pb-2 font-bold">Public</p>
-                      <li className="text-xs p-2 italic text-gray-600">
-                        Will be visibile to everyone on the platform
-                      </li>
+                    <div className="flex">
+                      <div>
+                        <div className="w-26 h-20 relative">
+                          <div className="text-dark mr-2 py-5">
+                            <div className="h-12 w-12 rounded-xl bg-yellow-400 flex items-center justify-center">
+                              <Image src={publicImg} width={25} alt="" />
+                            </div>
+                            <div className="absolute left-9 bottom-2">
+                              <Image src={userSelection} width={18} alt="user selection" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="my-2 border-t-2 border-b border-solid border-slate-200">
+                        <p className="text-large pt-2 pb-1 font-bold">Public</p>
+                        <li className="text-xs pl-1 italic text-gray-600">
+                          Will be visibile to everyone on the platform
+                        </li>
+                      </div>
                     </div>
                     <div className="border-b border-solid border-slate-200 mb-4">
                       {" "}
