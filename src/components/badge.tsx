@@ -11,7 +11,7 @@ const Badge: React.FC<IBadgeProps> = ({ icon: Icon, value }) => {
           <div className="w-26 h-20 col-span-1">
             <div className="text-dark pt-3">
               <div className="h-14 w-14 rounded-xl bg-yellow-400 flex items-center justify-center">
-                <Image src={Icon} alt="" />
+                <Image src={Icon} width={45} alt="" />
               </div>
             </div>
           </div>
