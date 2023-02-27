@@ -4,12 +4,11 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import publicImg from "@/assets/imgs/public.svg";
-import userSelection from "@/assets/imgs/userSelection.svg"
+import userSelection from "@/assets/imgs/publicIcon.svg"
 import { useRouter } from "next/router";
 import user from "@/data/user.json";
 import { RxCross2, RxTriangleDown } from "react-icons/rx";
 import { FaRegWindowMinimize } from "react-icons/fa";
-import {AiFillCheckCircle} from 'react-icons/ai'
 
 const AddNewModal = () => {
   const [showModal, setShowModal] = React.useState(false);
