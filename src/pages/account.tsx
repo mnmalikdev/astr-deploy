@@ -98,15 +98,15 @@ const Account = () => {
 
               <div className="mt-12">
                 <p className="text-md font-bold text-[#3D4849]">SUPPORT US</p>
-                <Badge icon={supportImg} value="Share a Space to remember" />
+                <Badge icon={supportImg} value="Share a Space to Remember" boldedWord="Share" />
               </div>
               <div className="mt-12">
                 <p className="text-md font-bold text-[#3D4849]">HELP</p>
                 <div className="mb-4">
-                  <Badge icon={feedbackImg} value="Give us Feedback" />
+                  <Badge icon={feedbackImg} value="Give us Feedback" boldedWord="feedback" />
                 </div>
                 <div className="mb-4">
-                  <Badge icon={helpImg} value="Help" />
+                  <Badge icon={helpImg} value="Help" boldedWord="Help" />
                 </div>
               </div>
               <div className="mt-16 flex items-center justify-center">

@@ -9,6 +9,7 @@ export interface IBadgeProps {
 
     icon:string,
     value:string,
+    boldedWord:string
 
 }
 
