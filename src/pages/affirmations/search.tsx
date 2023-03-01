@@ -30,7 +30,7 @@ const Search = () => {
               <div className="absolute inset-y-0 left-2 flex items-center pl-5 pointer-events-none">
                 <svg
                   aria-hidden="true"
-                  className="w-5 h-5 text-gray-500"
+                  className="w-6 h-6 text-[#373F51]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -45,8 +45,8 @@ const Search = () => {
               <div className="mx-4">
                 <input
                   type="text"
-                  className="bg-gray-50 border border-black lg:border-4 text-gray-900 text-sm rounded-2xl focus:ring-blue-500  block w-full pl-10 p-2.5"
-                  placeholder="What keywords you are searching for?"
+                  className="border border-[#373F51] lg:border-4 text-lg text-black rounded-full focus:ring-blue-500  block w-full pl-10 p-2"
+                  placeholder="What keywords you are searching for, John?"
                   onChange={(event) => {
                     setSearchTerm(event.target.value);
                   }}

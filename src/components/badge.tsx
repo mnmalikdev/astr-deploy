@@ -19,7 +19,7 @@ const Badge: React.FC<IBadgeProps> = ({ icon: Icon, value, boldedWord }) => {
             </div>
           </div>
           <div className="w-26 h-20 col-span-3 flex items-center">
-            <p className="text-dark text-[#3D4849] px-1"dangerouslySetInnerHTML={{ __html: withBoldedWord }}></p>
+            <p className="text-dark text-[#3D4849] px-1" dangerouslySetInnerHTML={{ __html: withBoldedWord }}></p>
           </div>
           <div className="w-26 h-20 col-span-1 flex items-center justify-center">
             <button className="rounded-full h-10 w-10 shadow-lg bg-gradient-to-r  from-[#0AD3FF] to-[#2CB673] flex items-center justify-center font-bold text-xl">
