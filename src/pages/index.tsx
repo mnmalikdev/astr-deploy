@@ -19,7 +19,7 @@ export default function Home() {
         bgColor={"#FFFFFF"}
       >
         <div className="container">
-          <div className="text-2xl px-2">
+          <div className="text-2xl px-8 lg:px-2">
             Good Morning, <span className="text-gray-600">John</span>
           </div>
           <div className="flex justify-center xl:justify-start flex-wrap">
