@@ -22,7 +22,7 @@ const Search = () => {
         bgColor={"#FFFFFF"}
       >
         <div className="container">
-          <div className="text-2xl ml-auto mb-8">
+          <div className="text-2xl ml-auto mb-2 lg:mb-8">
             <label htmlFor="simple-search" className="sr-only">
               Search
             </label>
