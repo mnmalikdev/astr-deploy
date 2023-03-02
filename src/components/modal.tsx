@@ -36,8 +36,8 @@ const Modal: React.FC<IModalProps> = ({ active, space, spaceDetail }) => {
                   </button>
                 </div>
                 <div className="relative p-6 flex-auto">
-                  <div className="flex flex-col h-full w-96 align-center">
-                    <div className="text-sm my-2 text-right mx-16 lg:mx-0 font-bold">
+                  <div className="flex flex-col h-full align-center">
+                    <div className="text-sm my-2 text-right mx-14 lg:mx-0 font-bold">
                       <a href="#about">About</a> • <a href="#about">Blog</a> •{" "}
                       <a href="#about">Contact</a> • <a href="#about">Terms</a>
                     </div>
@@ -47,7 +47,7 @@ const Modal: React.FC<IModalProps> = ({ active, space, spaceDetail }) => {
                         {spaceDetail}
                       </p>
                     </div>
-                    <div className="h-36 w-44 md:w-52 p-4 mb-2 mx-20 rounded-md bg-[#ED5A4C]"></div>
+                    <div className="h-36 w-44 md:w-60  mx-20 md:mx-52 p-4 mb-2 rounded-md bg-[#ED5A4C]"></div>
                   </div>
                 </div>
               </div>
