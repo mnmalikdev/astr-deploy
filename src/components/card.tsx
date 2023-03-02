@@ -14,12 +14,12 @@ const Card: FC<ICardProps> = ({ source, message, isLiked, type }) => {
       </div>
       <div
         className={`${
-          type === "large" ? "w-80 h-96" : "w-36 sm:w-44 h-40 md:w-60 md:h-64"
+          type === "large" ? "w-80 h-96" : "w-36 sm:w-44 h-40 md:w-60 md:h-64 lg:w-52 lg:h-56"
         }`}
       >
         <div
           className={`${
-            type === "large" ? "w-80 h-96" : "w-36 sm:w-44 h-40 md:w-60 md:h-64"
+            type === "large" ? "w-80 h-96" : "w-36 sm:w-44 h-40 md:w-60 md:h-64 lg:w-52 lg:h-56"
           } rounded-2xl bg-[#EFCA08] overflow-hidden shadow-xl`}
         >
           <div className="px-3 py-3 h-full w-full flex items-center justify-center">

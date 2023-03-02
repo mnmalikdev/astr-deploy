@@ -6,14 +6,14 @@ import { FaHome, FaHeart, FaRandom, FaSearch } from "react-icons/fa";
 
 const TabMenu: React.FC<IMenuProps> = ({ active }) => {
   return (
-    <nav className="fixed px-6 bottom-0 w-full flex items-center justify-between border-2 bg-white text-black">
+    <nav className="fixed px-6 bottom-0 right-0 left-0 w-full flex items-center border-2 border-l-0 border-r-0 justify-between border-2 bg-white text-black">
       <ul className="flex-0 mr-5">
         <li className="py-2">
           <Link href="/">
             <div className="flex justify-center">
               <FaHome color={active === "/" ? "black" : "gray"} size={20} />
             </div>
-            <p className="text-sm">Home</p>
+            <p className={`text-sm ${active === "/" ? "text-black" : "text-gray-600"}`}>Home</p>
           </Link>
         </li>
       </ul>
@@ -26,7 +26,7 @@ const TabMenu: React.FC<IMenuProps> = ({ active }) => {
                 size={20}
               />
             </div>
-            <p className="text-sm">Likes</p>
+            <p className={`text-sm ${active === "/affirmations/likes" ? "text-black" : "text-gray-600"}`}>Likes</p>
           </Link>
         </li>
       </ul>
@@ -39,7 +39,7 @@ const TabMenu: React.FC<IMenuProps> = ({ active }) => {
                 size={20}
               />
             </div>
-            <p className="text-sm">Random</p>
+            <p className={`text-sm ${active === "/affirmations/random" ? "text-black" : "text-gray-600"}`}>Random</p>
           </Link>
         </li>
       </ul>
@@ -52,7 +52,7 @@ const TabMenu: React.FC<IMenuProps> = ({ active }) => {
                 size={20}
               />
             </div>
-            <p className="text-sm">Search</p>
+            <p className={`text-sm ${active === "/affirmations/search" ? "text-black" : "text-gray-600"}`}>Search</p>
           </Link>
         </li>
       </ul>

@@ -13,11 +13,11 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '0rem',
-        sm: '1rem',
-        lg: '1rem',
-        xl: '1rem',
-        '2xl': '1rem',
+        xs:'0rem',
+        sm: '0rem',
+        lg: '0rem',
+        xl: '3rem',
+        '2xl': '3rem',
       }
     },
   },

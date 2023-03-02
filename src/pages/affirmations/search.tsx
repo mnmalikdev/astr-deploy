@@ -21,8 +21,7 @@ const Search = () => {
         spaceDetail={space.spaceDetail}
         bgColor={"#FFFFFF"}
       >
-        <div className="container">
-          <div className="text-2xl ml-auto mb-2 lg:mb-8">
+          <div className="text-2xl flex ml-auto mt-4 xl:mt-0">
             <label htmlFor="simple-search" className="sr-only">
               Search
             </label>
@@ -45,7 +44,7 @@ const Search = () => {
               <div className="mx-4">
                 <input
                   type="text"
-                  className="border border-[#373F51] lg:border-4 text-lg text-black rounded-full focus:ring-blue-500  block w-full pl-10 p-2"
+                  className="border border-[#373F51] lg:border-4 text-base xl:text-lg text-black rounded-full focus:ring-blue-500  block w-full pl-10 p-1"
                   placeholder="What keywords you are searching for, John?"
                   onChange={(event) => {
                     setSearchTerm(event.target.value);
@@ -72,7 +71,7 @@ const Search = () => {
               })
               .map((value, key) => (
                 <div
-                  className="md:mx-6 lg:mx-1 my-2 mt-8 lg:mt-12 relative"
+                  className="mx-2 md:mx-6 lg:mx-1 my-2 mt-6 lg:mt-12 relative"
                   key={key}
                 >
                   <button className="hidden md:block text-2xl absolute right-3 top-5 w-4 text-[#FFD233]">
@@ -85,15 +84,14 @@ const Search = () => {
                     type="small"
                   />
                   <button
-                    className="block md:hidden text-2xl absolute right-6 top-52 md:top-80 w-4 text-[#FFD233]"
-                    style={{ marginTop: 10 }}
+                    className="block md:hidden text-2xl absolute right-6 top-56 md:top-80 w-4 text-[#FFD233]"
+                    style={{ marginTop: 7 }}
                   >
                     <BsThreeDots size={20} />
                   </button>
                 </div>
               ))}
           </div>
-        </div>
       </ClientLayout>
     </>
   );

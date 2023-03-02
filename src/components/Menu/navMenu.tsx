@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/assets/imgs/ASTRLogo.png";
+import logo from "@/assets/imgs/logo.svg";
 import { IMenuProps } from "@/types/Menu";
 import user from "@/data/user.json";
 import Modal from "../modal";
@@ -10,7 +10,7 @@ const NavMenu : React.FC <IMenuProps> = ({active, space, spaceDetail}) => {
 
 
   return (
-    <nav className="fixed top-0 w-full flex items-center justify-between border-2 bg-white text-black">
+    <nav className="fixed top-0 right-0 left-0 w-full flex items-center justify-between border-2 border-l-0 border-r-0 bg-white text-black">
           <ul className="flex-0 mr-5">
             <li className="p-4">
               <Link href="/">

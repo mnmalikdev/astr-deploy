@@ -22,14 +22,14 @@ const Account = () => {
           spaceDetail={space.spaceDetail}
           bgColor={"#F2F2F2"}
         >
-          <div className="container">
-          <div className="text-2xl ml-auto lg:ml-20">
+          <div className="container p-4 xl:p-0">
+          <div className="text-2xl px-6 lg:px-2 py-4 lg:py-0">
             Here&apos;s your account,{" "}
             <span className="text-gray-600">John</span>
           </div>
           <div className="flex items-center justify-center px-0 py-10 md:px-24 lg:px-36 xl:px-60 2xl:px-96">
             <div className="mt-8">
-              <div className="max-w-sm py-3 h-80 overflow-hidden shadow-lg bg-white" style={{borderRadius:'32px'}}>
+              <div className="max-w-sm py-3 h-80 xl:w-96 overflow-hidden shadow-lg bg-white" style={{borderRadius:'32px'}}>
                 <div className="h-80">
                   <div className="h-full w-full flex items-center justify-center">
                     <div className="text-black text-center font-semibold">
@@ -47,7 +47,7 @@ const Account = () => {
                           onChange={() =>
                             alert("Please handle the onChange event.")
                           }
-                          className="w-32 h-8 text-[#3D4849] text-sm border border-[#3D4849] rounded-md p-1"
+                          className="w-32 h-8 text-[#3D4849] font-normal text-sm border border-[#3D4849] rounded-md p-1"
                         />
                         <input
                           type="text"
@@ -55,13 +55,13 @@ const Account = () => {
                           onChange={() =>
                             alert("Please handle the onChange event.")
                           }
-                          className="w-32 h-8 text-sm text-[#3D4849] border border-[#3D4849] rounded-md p-1"
+                          className="w-32 h-8 text-sm font-normal text-[#3D4849] border border-[#3D4849] rounded-md p-1"
                         />
                       </div>
                       <div className="mt-8 flex">
                         <p className="text-base font-semibold text-[#3D4849]">Role(s)</p>
                       </div>
-                      <p className="flex text-sm text-[#3D4849] mx-3 mt-1">• User</p>
+                      <p className="flex text-sm font-normal text-[#3D4849] mx-3 mt-1">• User</p>
                       <button className="mt-4 text-white bg-[#2CB673] p-2 w-32 rounded-md">
                         Update Profile
                       </button>
@@ -76,12 +76,12 @@ const Account = () => {
                   <div className="h-20 mb-2">
                     <div className="grid grid-cols-2 gap-1 justify-evenly">
                       <div className="w-26 h-12">
-                        <p className="text-gray-500 text-dark text-center mt-2">
+                        <p className="text-[#000000] font-normal text-opacity-40 text-center mt-2">
                           COLLECTIONS
                         </p>
                       </div>
                       <div className="w-26 h-12">
-                        <p className="text-gray-500 text-center mt-2">
+                        <p className="text-[#000000] font-normal text-opacity-40 text-center mt-2">
                           AFFIRMATIONS
                         </p>
                       </div>

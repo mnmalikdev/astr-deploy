@@ -20,11 +20,11 @@ const ClientLayout: React.FC<IClientProps> = ({
   }, [router]);
 
   return (
-    <div className="h-screen grid lg:grid-cols-12">
+    <div className="container h-screen grid lg:grid-cols-12">
       <div className={`bg-[${bgColor}] col-span-1 z-10`}>
         <Menu active={active} space={space} spaceDetail={spaceDetail} />
       </div>
-      <div className={`col-span-8 py-12 xl:px-2  bg-[${bgColor}] h-full`}>
+      <div className={`col-span-8 py-6 xl:px-2  bg-[${bgColor}] h-full`}>
         {children}
       </div>
       <div className="hidden lg:block col-span-3 ml-4 xl:w-60 xl:w-72 flex flex-col h-full align-center">

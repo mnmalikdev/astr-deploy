@@ -91,7 +91,7 @@ const Addnew = () => {
       </Head>
       <AddNewLayout>
         <div className="container py-4">
-          <div className="grid grid-cols-2 xl:mx-44">
+          <div className="grid grid-cols-2 xl:mx-44 mx-2">
             <div className="flex justify-start">
               <button className="text-white">
                 <RxCross2 size={22} onClick={() => router.back()} />
@@ -114,7 +114,7 @@ const Addnew = () => {
               </div>
             </div>
           </div>
-          <div className="grid place-items-center gap-4 my-20">
+          <div className="grid place-items-center gap-4 my-20 mx-2">
             <input
               type="text"
               className="bg-transparent text-center text-xl text-white placeholder-white italic border-white border-2 xl:border-4 w-full xl:w-1/2 h-14 rounded-lg"

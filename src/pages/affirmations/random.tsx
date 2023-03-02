@@ -52,8 +52,7 @@ const Random = () => {
         spaceDetail={space.spaceDetail}
         bgColor={"#FFFFFF"}
       >
-        <div className="container">
-        <div className="text-2xl px-8">
+        <div className="text-2xl px-8 lg:px-2 py-4 lg:py-0">
           By the way, <span className="text-gray-600">John</span>
         </div>
         <div className="flex justify-center relative">
@@ -79,7 +78,7 @@ const Random = () => {
           <div className="flex justify-center xl:justify-start flex-wrap">
             {data.map((value, key) => (
               <div
-                className="md:mx-4 lg:mx-1 mb-2  relative"
+                className="mx-2 md:mx-4 lg:mx-1 mb-2  relative"
                 key={key}
                 onClick={() => {
                   setSource(value.source);
@@ -101,8 +100,8 @@ const Random = () => {
                     type="small"
                   />
                   <button
-                    className="block md:hidden text-2xl absolute right-6 top-52 md:top-80 w-4 text-[#FFD233]"
-                    style={{ marginTop: 10 }}
+                    className="block md:hidden text-2xl absolute right-6 top-56 md:top-80 w-4 text-[#FFD233]"
+                    style={{ marginTop: 7 }}
                   >
                     <BsThreeDots size={20} />
                   </button>
@@ -110,7 +109,6 @@ const Random = () => {
               </div>
             ))}
           </div>
-        </div>
         </div>
       </ClientLayout>
     </>
