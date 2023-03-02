@@ -20,7 +20,7 @@ const ClientLayout: React.FC<IClientProps> = ({
   }, [router]);
 
   return (
-    <div className="container h-screen grid lg:grid-cols-12">
+    <div className="container grid lg:grid-cols-12">
       <div className={`bg-[${bgColor}] col-span-1 z-10`}>
         <Menu active={active} space={space} spaceDetail={spaceDetail} />
       </div>

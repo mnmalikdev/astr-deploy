@@ -27,11 +27,7 @@ const NavMenu : React.FC <IMenuProps> = ({active, space, spaceDetail}) => {
             <li className="p-4">
               <Link href="/account">
                 <span
-                  className={`${
-                    active === "/account"
-                      ? "text-black font-semibold"
-                      : "text-white"
-                  } bg-gradient-to-r from-[#2CB673] to-[#0AD3FF] p-2 rounded-full`}
+                  className={` bg-gradient-to-r text-white from-[#2CB673] to-[#0AD3FF] px-2 py-1.5  rounded-full`}
                 >
                   {user.initials}
                 </span>

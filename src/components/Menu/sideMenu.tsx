@@ -82,7 +82,7 @@ const SideMenu: React.FC<IMenuProps> = ({ active }) => {
         <li className="p-4">
           <Link href="/account">
             <span
-              className={`bg-gradient-to-r text-white from-[#2CB673] to-[#0AD3FF] p-2 rounded-full`}
+              className={`bg-gradient-to-r text-white from-[#2CB673] to-[#0AD3FF] px-2 py-1.5 rounded-full`}
             >
               {user.initials}
             </span>

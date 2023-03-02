@@ -21,7 +21,7 @@ export default function Home() {
           <div className="text-2xl px-8 lg:px-2 py-4 lg:py-0">
             Good Morning, <span className="text-gray-600">John</span>
           </div>
-          <div className="flex justify-center xl:justify-start flex-wrap">
+          <div className="flex mb-20 justify-center xl:justify-start flex-wrap">
             {data.map((value, key) => (
               <div className="mx-2 md:mx-6 lg:mx-1 my-2 mt-6 relative" key={key}>
                 <button className="hidden md:block text-2xl absolute right-3 top-5 w-4 text-[#FFD233]">

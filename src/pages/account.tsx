@@ -1,8 +1,8 @@
 import Head from "next/head";
 import ClientLayout from "@/layouts/clientLayout";
-import feedbackImg from '@/assets/imgs/feedback.svg'
-import supportImg from '@/assets/imgs/support.svg'
-import helpImg from '@/assets/imgs/Group.svg'
+import feedbackImg from "@/assets/imgs/feedback.svg";
+import supportImg from "@/assets/imgs/support.svg";
+import helpImg from "@/assets/imgs/Group.svg";
 import Badge from "@/components/badge";
 import Link from "next/link";
 import user from "@/data/user.json";
@@ -16,106 +16,125 @@ const Account = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <div className="">
+      <div>
         <ClientLayout
           space={space.space}
           spaceDetail={space.spaceDetail}
           bgColor={"#F2F2F2"}
         >
-          <div className="container p-4 xl:p-0">
-          <div className="text-2xl px-6 lg:px-2 py-4 lg:py-0">
-            Here&apos;s your account,{" "}
-            <span className="text-gray-600">John</span>
-          </div>
-          <div className="flex items-center justify-center px-0 py-10 md:px-24 lg:px-36 xl:px-60 2xl:px-96">
-            <div className="mt-8">
-              <div className="max-w-sm py-3 h-80 xl:w-96 overflow-hidden shadow-lg bg-white" style={{borderRadius:'32px'}}>
-                <div className="h-80">
-                  <div className="h-full w-full flex items-center justify-center">
-                    <div className="text-black text-center font-semibold">
-                      <span className="bg-gradient-to-r from-[#2CB673] to-[#0AD3FF] px-5 py-5 rounded-full text-3xl text-white">
-                        {user.initials}
-                      </span>
-                      <div className="mt-10 flex gap-16">
-                        <label className="text-sm text-[#3D4849]">First name</label>
-                        <label className="text-sm text-[#3D4849]">Last name</label>
-                      </div>
-                      <div className="mt-2 flex gap-2">
-                        <input
-                          type="text"
-                          value={user.firstName}
-                          onChange={() =>
-                            alert("Please handle the onChange event.")
-                          }
-                          className="w-32 h-8 text-[#3D4849] font-normal text-sm border border-[#3D4849] rounded-md p-1"
-                        />
-                        <input
-                          type="text"
-                          value={user.lastName}
-                          onChange={() =>
-                            alert("Please handle the onChange event.")
-                          }
-                          className="w-32 h-8 text-sm font-normal text-[#3D4849] border border-[#3D4849] rounded-md p-1"
-                        />
-                      </div>
-                      <div className="mt-8 flex">
-                        <p className="text-base font-semibold text-[#3D4849]">Role(s)</p>
-                      </div>
-                      <p className="flex text-sm font-normal text-[#3D4849] mx-3 mt-1">• User</p>
-                      <button className="mt-4 text-white bg-[#2CB673] p-2 w-32 rounded-md">
-                        Update Profile
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-12">
-                <p className="text-md font-bold text-[#3D4849]">STATS</p>
-                <div className="max-w-sm mt-2 overflow-hidden shadow-lg bg-white rounded-3xl">
-                  <div className="h-20 mb-2">
-                    <div className="grid grid-cols-2 gap-1 justify-evenly">
-                      <div className="w-26 h-12">
-                        <p className="text-[#000000] font-normal text-opacity-40 text-center mt-2">
-                          COLLECTIONS
+          <div className="p-4 xl:p-0 xl:h-screen">
+            <div className="text-2xl px-6 lg:px-2 py-4 lg:py-0">
+              Here&apos;s your account,{" "}
+              <span className="text-gray-600">John</span>
+            </div>
+            <div className="flex items-center justify-center px-0 py-10 md:px-24 lg:px-36 xl:px-60 2xl:px-96">
+              <div className="mt-8">
+                <div
+                  className="max-w-sm py-3 h-80 xl:w-96 overflow-hidden shadow-lg bg-white"
+                  style={{ borderRadius: "32px" }}
+                >
+                  <div className="h-80">
+                    <div className="h-full w-full flex items-center justify-center">
+                      <div className="text-black text-center font-semibold">
+                        <span className="bg-gradient-to-r from-[#2CB673] to-[#0AD3FF] px-5 py-4 rounded-full text-3xl text-white">
+                          {user.initials}
+                        </span>
+                        <div className="mt-10 flex gap-16">
+                          <label className="text-sm text-[#3D4849]">
+                            First name
+                          </label>
+                          <label className="text-sm text-[#3D4849]">
+                            Last name
+                          </label>
+                        </div>
+                        <div className="mt-2 flex gap-2">
+                          <input
+                            type="text"
+                            value={user.firstName}
+                            onChange={() =>
+                              alert("Please handle the onChange event.")
+                            }
+                            className="w-32 h-8 text-[#3D4849] font-normal text-sm border border-[#3D4849] rounded-md p-1"
+                          />
+                          <input
+                            type="text"
+                            value={user.lastName}
+                            onChange={() =>
+                              alert("Please handle the onChange event.")
+                            }
+                            className="w-32 h-8 text-sm font-normal text-[#3D4849] border border-[#3D4849] rounded-md p-1"
+                          />
+                        </div>
+                        <div className="mt-8 flex">
+                          <p className="text-base font-semibold text-[#3D4849]">
+                            Role(s)
+                          </p>
+                        </div>
+                        <p className="flex text-sm font-normal text-[#3D4849] mx-3 mt-1">
+                          • User
                         </p>
-                      </div>
-                      <div className="w-26 h-12">
-                        <p className="text-[#000000] font-normal text-opacity-40 text-center mt-2">
-                          AFFIRMATIONS
-                        </p>
-                      </div>
-                      <div className="w-26 h-12">
-                        <p className="text-center font-bold text-2xl">1</p>
-                      </div>
-                      <div className="w-26 h-12">
-                        <p className="text-center font-bold text-2xl">2</p>
+                        <button className="mt-4 text-white bg-[#2CB673] p-2 w-32 rounded-md">
+                          Update Profile
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="mt-12">
-                <p className="text-md font-bold text-[#3D4849]">SUPPORT US</p>
-                <Badge icon={supportImg} value="Share a Space to Remember" boldedWord="Share" />
-              </div>
-              <div className="mt-12">
-                <p className="text-md font-bold text-[#3D4849]">HELP</p>
-                <div className="mb-4">
-                  <Badge icon={feedbackImg} value="Give us Feedback" boldedWord="feedback" />
+                <div className="mt-12">
+                  <p className="text-md font-bold text-[#3D4849]">STATS</p>
+                  <div className="max-w-sm mt-2 overflow-hidden shadow-lg bg-white rounded-3xl">
+                    <div className="h-20 mb-2">
+                      <div className="grid grid-cols-2 gap-1 justify-evenly">
+                        <div className="w-26 h-12">
+                          <p className="text-[#000000] font-normal text-opacity-40 text-center mt-2">
+                            COLLECTIONS
+                          </p>
+                        </div>
+                        <div className="w-26 h-12">
+                          <p className="text-[#000000] font-normal text-opacity-40 text-center mt-2">
+                            AFFIRMATIONS
+                          </p>
+                        </div>
+                        <div className="w-26 h-12">
+                          <p className="text-center font-bold text-2xl">1</p>
+                        </div>
+                        <div className="w-26 h-12">
+                          <p className="text-center font-bold text-2xl">2</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="mb-4">
-                  <Badge icon={helpImg} value="Help" boldedWord="Help" />
+
+                <div className="mt-12">
+                  <p className="text-md font-bold text-[#3D4849]">SUPPORT US</p>
+                  <Badge
+                    icon={supportImg}
+                    value="Share a Space to Remember"
+                    boldedWord="Share"
+                  />
                 </div>
-              </div>
-              <div className="mt-16 flex items-center justify-center">
-                <Link href="/" className="text-[#2CB673]">
-                  Sign Out
-                </Link>
+                <div className="mt-12">
+                  <p className="text-md font-bold text-[#3D4849]">HELP</p>
+                  <div className="mb-4">
+                    <Badge
+                      icon={feedbackImg}
+                      value="Give us Feedback"
+                      boldedWord="feedback"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <Badge icon={helpImg} value="Help" boldedWord="Help" />
+                  </div>
+                </div>
+                <div className="mt-16 flex items-center justify-center">
+                  <Link href="/" className="text-[#2CB673]">
+                    Sign Out
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </ClientLayout>
       </div>

@@ -75,7 +75,7 @@ const Random = () => {
           <div className="text-base font-semibold px-4 mt-20">
             More affirmation
           </div>
-          <div className="flex justify-center xl:justify-start flex-wrap">
+          <div className="flex mb-20 justify-center xl:justify-start flex-wrap">
             {data.map((value, key) => (
               <div
                 className="mx-2 md:mx-4 lg:mx-1 mb-2  relative"
