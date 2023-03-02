@@ -16,13 +16,13 @@ const Account = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <div>
+      <div className="xl:h-screen">
         <ClientLayout
           space={space.space}
           spaceDetail={space.spaceDetail}
           bgColor={"#F2F2F2"}
         >
-          <div className="p-4 xl:p-0 xl:h-screen">
+          <div className="p-4 xl:p-0">
             <div className="text-2xl px-6 lg:px-2 py-4 lg:py-0">
               Here&apos;s your account,{" "}
               <span className="text-gray-600">John</span>
