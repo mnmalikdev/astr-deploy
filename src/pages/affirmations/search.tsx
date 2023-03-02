@@ -44,7 +44,7 @@ const Search = () => {
               <div className="mx-4">
                 <input
                   type="text"
-                  className="border border-[#373F51] lg:border-4 text-base xl:text-lg text-black rounded-full  block w-full pl-10 p-2"
+                  className="border border-[#373F51] lg:border-4 text-sm xl:text-lg text-black rounded-full  block w-full pl-10 p-2"
                   placeholder="What keywords you are searching for, John?"
                   onChange={(event) => {
                     setSearchTerm(event.target.value);
