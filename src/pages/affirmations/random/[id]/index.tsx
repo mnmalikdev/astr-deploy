@@ -5,6 +5,13 @@ import ClientLayout from "@/layouts/clientLayout";
 import Card from "@/components/card";
 import { BsThreeDotsVertical, BsThreeDots } from "react-icons/bs";
 import { ICardProps } from "@/types/card";
+import { useRouter } from "next/router";
+
+interface IData {
+  source: string;
+  message: string;
+  liked: boolean;
+}
 
 const SelectedCard: React.FC<ICardProps> = ({
   source,
@@ -12,19 +19,25 @@ const SelectedCard: React.FC<ICardProps> = ({
   isLiked,
   type,
 }) => {
-  const [random, setRandom] = React.useState(data[0]);
+  const [random, setRandom] = React.useState<IData | undefined>();
+
+  const router = useRouter();
+  const { id } = router.query;
 
   React.useEffect(() => {
-    setRandom(data[Math.floor(Math.random() * data.length)]);
-  }, []);
+    const idNumber = Number(id);
+    if (!isNaN(idNumber)) {
+      setRandom(data.find((_, key) => key === idNumber));
+    }
+  }, [id]);
 
   return (
     <>
       {source.length == 0 || message.length == 0 ? (
         <Card
-          source={random.source}
-          message={random.message}
-          isLiked={random.liked}
+          source={random?.source ?? ""}
+          message={random?.message ?? ""}
+          isLiked={random?.liked ?? false}
           type={type}
         />
       ) : (
@@ -34,10 +47,12 @@ const SelectedCard: React.FC<ICardProps> = ({
   );
 };
 
-const Random = () => {
-  const [source, setSource] = React.useState<string>("");
-  const [message, setMessage] = React.useState<string>("");
-  const [isLiked, setIsLiked] = React.useState<boolean>(false);
+const Highlight = () => {
+  const [source] = React.useState<string>("");
+  const [message] = React.useState<string>("");
+  const [isLiked] = React.useState<boolean>(false);
+
+  const router = useRouter();
 
   return (
     <>
@@ -55,37 +70,37 @@ const Random = () => {
         <div className="text-2xl px-8 lg:px-2 py-4 lg:py-0">
           By the way, <span className="text-gray-600">John</span>
         </div>
-        <div className="flex justify-center relative">
-          <button className="hidden md:block text-2xl absolute right-72 top-5 w-4 text-[#FFD233]">
-            <BsThreeDotsVertical size={20} />
-          </button>
+        <div className="lg:mt-12 flex justify-center">
+          <div className="relative">
+            <button
+              className="hidden md:block text-2xl absolute left-72 top-5 w-4 text-[#FFD233]"
+              style={{ marginLeft: 12 }}
+            >
+              <BsThreeDotsVertical size={22} />
+            </button>
+          </div>
           <SelectedCard
             source={source}
             message={message}
             isLiked={isLiked}
             type="large"
           />
-          <button className="block md:hidden absolute right-20 top-96 md:top-80 w-4 text-[#FFD233]"
-            style={{marginTop:70}}
-          >
-            <BsThreeDots size={30} />
-          </button>
+          <div className="relative">
+            <button
+              className="block md:hidden absolute right-10 top-96 bottom-0 md:top-80 w-4 text-[#FFD233]"
+              style={{ marginTop: 66 }}
+            >
+              <BsThreeDots size={30} />
+            </button>
+          </div>
         </div>
         <div>
-          <div className="text-base font-semibold px-4 mt-20">
+          <div className="text-base font-semibold px-4 mt-40 2xl:mt-60">
             More affirmation
           </div>
           <div className="flex mb-20 justify-center xl:justify-start flex-wrap">
             {data.map((value, key) => (
-              <div
-                className="mx-2 md:mx-4 lg:mx-1 mb-2  relative"
-                key={key}
-                onClick={() => {
-                  setSource(value.source);
-                  setMessage(value.message);
-                  setIsLiked(value.liked);
-                }}
-              >
+              <div className="mx-0 md:mx-4 lg:mx-1 mb-2  relative" key={key}>
                 <div
                   className="md:mx-6 lg:mx-0 my-2 mt-12 flex justify-end relative"
                   key={key}
@@ -93,14 +108,21 @@ const Random = () => {
                   <button className="hidden md:block text-2xl absolute right-3 top-5 w-4 text-[#FFD233]">
                     <BsThreeDotsVertical size={20} />
                   </button>
-                  <Card
-                    source={value.source}
-                    message={value.message}
-                    isLiked={value.liked}
-                    type="small"
-                  />
+                  <span
+                  className="w-40 h-40 md:w-60 md:h-60 lg:w-44 lg:h-48 top-16 right-2 lg:right-6 absolute cursor-pointer"
+                    onClick={() => {
+                      router.push("/affirmations/random/" + value.id);
+                    }}
+                  >
+                  </span>
+                    <Card
+                      source={value.source}
+                      message={value.message}
+                      isLiked={value.liked}
+                      type="small"
+                    />
                   <button
-                    className="block md:hidden text-2xl absolute right-6 top-56 md:top-80 w-4 text-[#FFD233]"
+                    className="block md:hidden text-2xl absolute right-6 top-60 md:top-80 w-4 text-[#FFD233]"
                     style={{ marginTop: 7 }}
                   >
                     <BsThreeDots size={20} />
@@ -121,4 +143,4 @@ const space = {
     "Like trajectories, inspiration isn't linear.Use this space to discover your affirmation in an alternative way.",
 };
 
-export default Random;
+export default Highlight;

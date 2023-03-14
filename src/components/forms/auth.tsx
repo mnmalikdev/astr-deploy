@@ -72,7 +72,7 @@ export const SignupForm = () => {
             className="w-72 h-9 bg-gray-100 rounded-md p-2"
           />
         </div>
-        <div className="px-10">
+        <div className="px-7">
           <div className="mb-1">
             <input
               id="default-checkbox"

@@ -28,7 +28,7 @@ const ClientLayout: React.FC<IClientProps> = ({
         {children}
       </div>
       <div className="hidden lg:block col-span-3 ml-4 xl:w-60 xl:w-72 flex flex-col h-full align-center">
-        <div className="text-sm mt-28 text-right md:mx-60 mx-16 lg:mx-0 font-bold">
+        <div className="text-sm mt-28 text-left md:mx-60 mx-16 lg:mx-0 font-bold">
           <a href="#about">About</a> • <a href="#about">Blog</a> •{" "}
           <a href="#about">Contact</a> • <a href="#about">Terms</a>
         </div>

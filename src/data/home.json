@@ -1,42 +1,42 @@
 [
     {
-        "id":"0",
+        "id":0,
         "source":"Unknown",
         "message":"Opinions don't define my reality.",
         "liked":true
     },
     {
-        "id":"1",
+        "id":1,
         "source":"seffsaid.com",
         "message":"I engage in work that impacts this world positively.",
         "liked":false
     },
     {
-        "id":"2",
+        "id":2,
         "source":"Unknown",
         "message":"I engage in work that impacts this world positively.",
         "liked":true
     },
     {
-        "id":"3",
+        "id":3,
         "source":"seffsaid.com",
         "message":"I muster up more hope and courage from deep inside me.",
         "liked":false
     },
     {
-        "id":"4",
+        "id":4,
         "source":"prolifeliving.com",
         "message":"I muster up more hope and courage from deep inside me.",
         "liked":false
     },
     {
-        "id":"5",
+        "id":5,
         "source":"Unknown",
         "message":"I accept my emotions and let them serve their purpose. My emotions are my strength.",
         "liked":true
     },
     {
-        "id":"6",
+        "id":6,
         "source":"Unknown",
         "message":"This situation works out for my highest good.",
         "liked":true

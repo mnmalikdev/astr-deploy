@@ -22,26 +22,26 @@ const AddNewModal = () => {
         <span className="text-sm text-[#373F51]">Public</span>
         <RxTriangleDown size={20} />
       </button>
-
-      {showModal ? (
-        <>
-          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-auto my-6 mx-auto max-w-3xl">
-              <div className="border-0 rounded-t-3xl shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                <div className="flex justify-center rounded-t">
+ 
+      <div 
+        className={`${
+          showModal ? "translate-y-0 ease-out" : "translate-y-full ease-in"
+        } fixed inset-0 flex justify-center items-end  left-0 z-50 w-full h-full overflow-x-auto transition duration-300 transform`}
+      >
+            <div className="bg-white lg:rounded-t-3xl h-full w-full shadow-lg overflow-hidden">
+                <div className="flex justify-center px-4 py-4">
                   <button className="p-1" onClick={() => setShowModal(false)}>
                     <span className="text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
                       <FaRegWindowMinimize color="#373F51" />
                     </span>
                   </button>
                 </div>
-                <div className="relative p-6 flex-auto">
-                  <div className="flex flex-col h-full align-center">
+                <div className="px-6 py-4">
+                  <div className="flex flex-col align-center">
                     <div className="text-lg mb-4 text-center mx-16 lg:mx-0 font-bold">
                       Affirmation Visability
                     </div>
-                    <div className="flex">
-                      <div>
+                    <div className="flex items-center justify-center">
                         <div className="w-26 h-20 relative">
                           <div className="text-dark mr-2 py-5">
                             <div className="h-12 w-12 rounded-xl bg-yellow-400 flex items-center justify-center">
@@ -51,7 +51,6 @@ const AddNewModal = () => {
                               <Image src={userSelection} width={18} alt="user selection" />
                             </div>
                           </div>
-                        </div>
                       </div>
                       <div className="my-2 border-t-2 border-b border-solid border-slate-200">
                         <p className="text-large pt-2 pb-1 font-bold">Public</p>
@@ -66,14 +65,10 @@ const AddNewModal = () => {
                         More options coming soon
                       </p>
                     </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-        </>
-      ) : null}
     </>
   );
 };

@@ -10,7 +10,7 @@ import Tooltip from "../tooltip";
 
 const SideMenu: React.FC<IMenuProps> = ({ active }) => {
   return (
-    <nav className="hidden lg:block lg:flex flex-col w-20 fixed lg:items-center border-r-2 h-screen bg-white text-black">
+    <nav className="hidden lg:block lg:flex flex-col w-20 fixed lg:items-center h-screen bg-white text-black">
       <ul className="flex-1 mt-5">
         <Link href="/">
           <Image src={logo} alt="logo"  />

@@ -15,6 +15,8 @@ const Modal: React.FC<IModalProps> = ({ active, space, spaceDetail }) => {
             ? "LIKES"
             : active === "/affirmations/random"
             ? "RANDOM"
+            : active === "/affirmations/random/[id]"
+            ? "RANDOM"
             : active === "/affirmations/search"
             ? "SEARCH"
             : active === "/account"
@@ -23,39 +25,34 @@ const Modal: React.FC<IModalProps> = ({ active, space, spaceDetail }) => {
           <RiErrorWarningLine onClick={() => setShowModal(true)} size={21} className="text-gray-500" />
         </p>
       </div>
-      {showModal ? (
-        <>
-          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-auto my-6 mx-auto max-w-3xl">
-              <div className="border-0 rounded-t-3xl shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                <div className="flex justify-center border-b border-solid border-slate-200 rounded-t">
-                  <button className="p-1" onClick={() => setShowModal(false)}>
-                    <span className="text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
-                      <FaRegWindowMinimize color="#373F51" />
-                    </span>
+      <div 
+        className={`${
+          showModal ? "translate-y-0 ease-out" : "translate-y-full ease-in"
+        } fixed inset-0 flex justify-center items-end  left-0 z-50 w-full h-full overflow-x-auto transition duration-300 transform`}
+      >
+              <div className="max-w-3xl bg-white rounded-t-3xl h-full w-full shadow-lg overflow-hidden">
+                <div className="flex justify-center py-4 px-4">
+                  <button onClick={() => setShowModal(false)}>
+                    <FaRegWindowMinimize color="#373F51" />
                   </button>
                 </div>
-                <div className="relative p-6 flex-auto">
-                  <div className="flex flex-col h-full align-center">
-                    <div className="text-sm my-2 text-right mx-14 lg:mx-0 font-bold">
-                      <a href="#about">About</a> • <a href="#about">Blog</a> •{" "}
-                      <a href="#about">Contact</a> • <a href="#about">Terms</a>
-                    </div>
-                    <div className="my-2 border-t-2 border-b-2">
-                      <p className="text-large pt-2 pb-2 font-bold">{space}</p>
-                      <p className="text-xs pt-2 pb-2 text-gray-600">
-                        {spaceDetail}
-                      </p>
-                    </div>
-                    <div className="h-36 w-44 md:w-60  mx-20 md:mx-52 p-4 mb-2 rounded-md bg-[#ED5A4C]"></div>
+                <div className="px-6 py-4">
+                  <div className="text-sm my-2 text-right mx-14 lg:mx-0 font-bold">
+                    <a href="#about">About</a> • <a href="#about">Blog</a> •{" "}
+                    <a href="#about">Contact</a> • <a href="#about">Terms</a>
                   </div>
+                  <div className="my-2 border-t-2 border-b-2">
+                    <p className="text-large pt-2 pb-2 font-bold">{space}</p>
+                    <p className="text-xs pt-2 pb-2 text-gray-600">
+                      {spaceDetail}
+                    </p>
+                  </div>
+                  <div className="h-36 w-44 md:w-60  mx-20 md:mx-52 p-4 mb-2 rounded-md bg-[#ED5A4C]"></div>
+                  <div className="h-48 w-44 md:w-60  mx-20 md:mx-52 p-4 mb-2 rounded-md bg-[#FF5F00]"></div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-        </>
-      ) : null}
+            {/* <div className="opacity-25 fixed inset-0 z-40 bg-black"></div> */}
     </>
   );
 };

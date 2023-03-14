@@ -24,7 +24,7 @@ const Likes: React.FC = () => {
         </div>
         <div className="flex mb-20 justify-center xl:justify-start flex-wrap">
           {data.map((value, key) => (
-            <div className="mx-2 md:mx-6 lg:mx-1 my-2 mt-6 relative" key={key}>
+            <div className="mx-0 md:mx-6 lg:mx-1 my-6 mt-6 relative" key={key}>
               <button className="hidden md:block text-2xl absolute right-3 top-5 w-4 text-[#FFD233]">
                 <BsThreeDotsVertical size={20} />
               </button>
@@ -35,7 +35,7 @@ const Likes: React.FC = () => {
                 type="small"
               />
               <button
-                className="block md:hidden text-2xl absolute right-6 top-56 md:top-80 w-4 text-[#FFD233]"
+                className="block md:hidden text-2xl absolute right-6 top-60 md:top-80 w-4 text-[#FFD233]"
                 style={{ marginTop: 7 }}
               >
                 <BsThreeDots size={20} />
